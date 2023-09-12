@@ -1,0 +1,40 @@
+mat-card-title {
+  font-size: 25px;
+}
+
+button{
+
+  margin-bottom: 10px; 
+}
+
+.body {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  margin: auto;
+  text-align: center;
+}
+
+.form{
+  width: 450px;
+}
+
+mat-card-actions {
+  gap: 10px;
+}
+
+
+
+
+@media screen and (max-width: 650px) {
+  .body {
+    width: 330px;
+    padding: 15px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .form{
+    width: 100%;
+  }
+}

@@ -1,0 +1,169 @@
+
+<mat-dialog-content class="body">
+  <div>
+    <form [formGroup]="ContactForm" class="register" (ngSubmit)="actionForm()">
+      <mat-form-field class="form" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="firstName"
+          #inputfn
+          maxlength="30"
+        />
+        <mat-hint
+          align="start"
+          style="color: red"
+          *ngIf="(FirstName.errors?.['required'] && FirstName.touched)"
+          > El campo esta vacio
+          </mat-hint>
+
+          <mat-hint
+          align="start"
+          style="color: red"
+          *ngIf="(FirstName.errors?.['pattern'] && FirstName.touched)"
+          > Solo se permiten letras
+          </mat-hint>
+
+        <mat-hint align="end">{{ inputfn.value.length }}/30</mat-hint>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="form" appearance="fill">
+        <mat-label>Apellido</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="lastName"
+          #inputln
+          maxlength="30"
+        />
+        <mat-hint
+        align="start"
+        style="color: red"
+        *ngIf="(LastName.errors?.['required'] && LastName.touched)"
+        > El campo esta vacio
+        </mat-hint>
+
+        <mat-hint
+        align="start"
+        style="color: red"
+        *ngIf="(LastName.errors?.['pattern'] && LastName.touched)"
+        > Solo se permiten letras
+        </mat-hint>
+        <mat-hint align="end">{{ inputln.value.length }}/30</mat-hint>
+      </mat-form-field>
+      <br />
+
+
+
+      <mat-form-field class="form" appearance="fill">
+        <mat-label>Correo</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="email"
+          #inpute
+          maxlength="90"
+        />
+        <mat-hint
+        align="start"
+        style="color: red"
+        *ngIf="(Email.errors?.['required'] && Email.touched)"
+        > El campo esta vacio
+        </mat-hint>
+
+        <mat-hint
+        align="start"
+        style="color: red"
+        *ngIf="(Email.errors?.['email'] && Email.touched)"
+        > Correo no valido
+        </mat-hint>
+        <mat-hint align="end">{{ inpute.value.length }}/90</mat-hint>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="form" appearance="fill">
+        <mat-label>Telefono XXX-XXX-XXXX</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="phone"
+          #inputtl
+          maxlength="12"
+        />
+        <mat-hint
+        align="start"
+        style="color: red"
+        *ngIf="(Phone.errors?.['required'] && Phone.touched)"
+        > El campo esta vacio
+        </mat-hint>
+
+        <mat-hint
+        align="start"
+        style="color: red"
+        *ngIf="(Phone.errors?.['pattern'] && Phone.touched)"
+        > Telefono no valido
+        </mat-hint>
+        <mat-hint align="end">{{ inputtl.value.length }}/12</mat-hint>
+
+        <mat-hint
+        align="start"
+        style="color: red"
+        *ngIf="(Phone.errors?.['minlength'] && Phone.touched)"
+        > El telefono es de 12 caracteres 
+        </mat-hint>
+
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="form" appearance="fill">
+        <mat-label>Telefono Adicional XXX-XXX-XXXX</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="extraPhone"
+          #inputtlx
+          maxlength="12"
+        />
+
+        <mat-hint
+        align="start"
+        style="color: red"
+        *ngIf="(ExtraPhone.errors?.['pattern'] && ExtraPhone.touched)"
+        > Telefono no valido
+        </mat-hint>
+        <mat-hint
+        align="start"
+        style="color: red"
+        *ngIf="(ExtraPhone.errors?.['minlength'] && ExtraPhone.touched)"
+        > El telefono es de 12 caracteres 
+        </mat-hint>
+        <mat-hint align="end">{{ inputtlx.value.length }}/12</mat-hint>
+      </mat-form-field>
+      <br />
+
+
+      <button
+        class="form"
+        mat-raised-button
+        mat-button
+        color="primary"
+        type="submit"
+        [disabled]="!ContactForm.valid"
+      >
+        {{ actionButton }}
+      </button>
+      <br />
+      <button
+        mat-dialog-close
+        class="form"
+        mat-raised-button
+        mat-button
+        color="warn"
+      >
+        Cancelar
+      </button>
+    </form>
+  </div>
+</mat-dialog-content>
