@@ -6,8 +6,7 @@ For the data, I have a JSON, and to use it as an API, I used json-server. To set
 ## FRONTED IN ACTION
 In this video I show all you can do in the project (a simple CRUD):
 
-
-[![Alternate Text]({https://i.imgur.com/mJ6IPZN.png})]({https://streamable.com/e/i9v32l} "Video desmotrading the Frontend")
+https://streamable.com/i9v32l
 
 
 
